@@ -1,0 +1,19 @@
+describe('Registration Functionality',()=>{
+    it('Registration new user',()=>{
+        cy.visit('https://parabank.parasoft.com/parabank/index.htm')
+        cy.get('#loginPanel > :nth-child(3) > a').click()
+        cy.get('[name="customer.firstName"]').type('first')
+        cy.get('[name="customer.lastName"]').type('last')
+        cy.get('[name="customer.address.street"]').type('address')
+        cy.get('[name="customer.address.city"]').type('DHK')
+        cy.get('[name="customer.address.state"]').type('DHK')
+        cy.get('[name="customer.address.zipCode"]').type('1234')
+        cy.get('[name="customer.phoneNumber"]').type('123456')
+        cy.get('[name="customer.ssn"]').type('abcd')
+        cy.get('[name="customer.username"]').type('USER')
+        cy.get('[name="customer.password"]').type('1234')
+        cy.get('[name="repeatedPassword"]').type('1234')
+        cy.get('[colspan="2"] > .button').click()
+
+    })
+})
